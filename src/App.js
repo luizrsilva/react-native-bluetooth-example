@@ -12,11 +12,23 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={
+          {
+            headerStyle: {
+              backgroundColor: '#6B47B7',
+            },
+            headerTintColor: '#fff',
+            headerTitleAlign: 'center'
+          }} >
+        <Stack.Screen name="Home" component={Home} options={{ title: 'RN BLE Example' }} />
         <Stack.Screen name="Details" component={DeviceDetails} />
       </Stack.Navigator>
     </NavigationContainer>);
 };
+
+
+
 
 export default App; 
